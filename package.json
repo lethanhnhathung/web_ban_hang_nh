@@ -1,0 +1,36 @@
+{
+  "name": "web_ban_hang_tdk",
+  "version": "1.0.0",
+  "description": "To make it easy for you to get started with GitLab, here's a list of recommended next steps.",
+  "main": "main.js",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^5.3.5",
+    "fetch": "^1.1.0",
+    "fs": "0.0.1-security",
+    "mongodb": "^5.6.0",
+    "mongoose": "^6.3.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "node-localstorage": "^2.2.1",
+    "nodemon": "^2.0.22",
+    "path": "^0.12.7",
+    "swagger-ui-express": "^4.3.0"
+  },
+  "scripts": {
+    "start": "nodemon ./main.js",
+    "seed": "nodemon ./seed/Users.js",
+    "watch": "node-sass --w ./view/scss/app.scss ./public/css/app.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/hoang12b1ksa/web_ban_hang_tdk.git"
+  },
+  "author": "Nhật Hưng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/hoang12b1ksa/web_ban_hang_tdk/issues"
+  },
+  "homepage": "https://gitlab.com/hoang12b1ksa/web_ban_hang_tdk#readme"
+}

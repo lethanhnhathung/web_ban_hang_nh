@@ -1,0 +1,287 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-0" href="http://localhost:3000/homepage">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
+          height="15"
+          alt="MDB Logo"
+          loading="lazy"
+        />
+      </a>
+    </div>
+    <!-- Collapsible wrapper -->
+
+    <!-- Right elements -->
+    <div class="d-flex align-items-center">
+      <!-- Avatar -->
+      <div style="margin-right: 10px;" id="username"></div>
+      <div class="dropdown">
+        <a
+          class="dropdown-toggle d-flex align-items-center hidden-arrow"
+          href="#"
+          id="navbarDropdownMenuAvatar"
+          role="button"
+          data-mdb-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <img
+            src="http://localhost:3000/image/avatar/avatar.jpg"
+            class="rounded-circle"
+            height="25"
+            alt="Black and White Portrait of a Man"
+            loading="lazy"
+          />
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="navbarDropdownMenuAvatar"
+        >
+          <li>
+              <a class="dropdown-item" href="#">Đổi mật khẩu</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#" id="logout-link">Đăng xuất</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Right elements -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+
+<hr class="hr hr-blurry" />
+
+<div class="row">
+    <div class="col-md-5">
+        <div class="d-flex align-items-center justify-content-center">
+            <h2 class="text-primary">Danh Sách Sản Phẩm Đang Bán</h2>
+        </div>
+    </div> 
+
+    <div class="col-md-3"></div>
+
+    <div class="col-md-4">
+        <div class="d-flex flex-row-reverse">
+          <div class="p-2">
+            <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal1">
+              Thêm
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4 mb-2">
+  <div class="col-1"></div>
+  <div class="col-10">
+    <table class="table border border-secondary table-striped table-hover" style="border-radius:20%">
+      <thead>
+        <tr>
+          <th class="text-center" scope="col">STT</th>
+          <th class="text-center" scope="col">Tên mặt hàng</th>
+          <th class="text-center" scope="col">Giá mặt hàng</th>
+          <th class="text-center" scope="col">Đơn vị</th>
+          <th class="text-center" scope="col">Trạng thái</th>
+          <th class="text-center" scope="col">Thông tin</th>
+          <th class="text-center" scope="col">Chức năng</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row mb-2">
+  <div class="col-4"></div>
+  <div class="col-4" style="display: flex; justify-content: center; align-items: center;">
+    <nav aria-label="...">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#">Previous</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  
+  <div class="col-4"></div>
+</div>
+
+
+
+
+
+
+
+
+
+{{!-- <footer class="text-center text-white fixed-bottom" style="background-color: #21081a;">
+    <!-- Grid container -->
+    <div class="container p-4"></div>
+    <!-- Grid container -->
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © Bản quyền
+    <a class="text-white" href="https://mdbootstrap.com/">Web bán hàng thiết kể bởi Trịnh Đăng Khoa</a>
+  </div>
+  <!-- Copyright -->
+</footer> --}}
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Xem chi tiết</h5>
+        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body ">
+          <form>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">STT</label>
+              <input disabled type="text" class="form-control" id="recipient-name" value="1"/>
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Tên mặt hàng</label>
+              <textarea disabled class="form-control" id="nameProduct"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Giá ( VNĐ )</label>
+              <textarea disabled class="form-control" id="priceProduct"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Đơn vị</label>
+              <textarea disabled class="form-control" id="unitProduct"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Trạng thái</label>
+              <textarea disabled class="form-control" id="statusProduct"></textarea>
+            </div>
+            <img
+              src=""
+              class="img-thumbnail"
+              alt=""
+            />
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Thêm mới sản phẩm</h5>
+        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+         <form action="http://localhost:3000/product/createProduct" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Tên mặt hàng</label>
+              <textarea class="form-control" id="message-text" name="name"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Giá</label>
+              <textarea class="form-control" id="message-text" name = "price"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Đơn vị</label>
+              <textarea class="form-control" id="message-text" name = "unit"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Địa chỉ</label>
+              <textarea class="form-control" id="message-text" name ="address"></textarea>
+            </div>
+            <input type="file" name="fileName" />
+            <div class="modal-footer">
+                  <button type="submit" value="upload" class="btn btn-secondary " data-mdb-dismiss="modal">Thêm mới</button>
+                  <button type="button" class="btn btn-secondary " data-mdb-dismiss="modal">Close</button>
+            </div>
+          </form> 
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Chỉnh sửa sản phẩm</h5>
+        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+         <form action="http://localhost:3000/product/updateProduct" method="POST" enctype="multipart/form-data">
+              <textarea class="form-control" style="display:none;" id="_id" name="_id"></textarea>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">STT</label>
+              <input disabled type="text" class="form-control" id="recipient-name" value="1"/>
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Tên mặt hàng</label>
+              <textarea class="form-control" id="nameProduct" name="name"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Giá ( VNĐ )</label>
+              <textarea class="form-control" id="priceProduct" name="price"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Đơn vị</label>
+              <textarea class="form-control" id="unitProduct" name="unit"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Trạng thái</label>
+              <textarea disabled class="form-control" id="statusProduct"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Địa chỉ</label>
+              <textarea class="form-control" id="message-text" name ="address"></textarea>
+            </div>
+            <img
+              src=""
+              class="img-thumbnail"
+              alt=""
+            />
+            <input type="file" name="fileName" />
+            <div class="modal-footer">
+                  <button type="submit" value="upload" class="btn btn-secondary " data-mdb-dismiss="modal">Cập nhật</button>
+                  <button type="button" class="btn btn-secondary " data-mdb-dismiss="modal">Close</button>
+            </div>
+          </form> 
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="http://localhost:3000/script/dashboard.js"></script>
