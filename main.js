@@ -32,10 +32,10 @@ app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'view'));
 
 //user router here
-const router = express.Router();
+const router = express.Router();    
 
 //Api đăng nhập
-router.use("/auth", require('./routes/auth/auth.route.js'));
+router.use("/auth", require('./routes/auth/auth.route.js'));    
 
 //Api sản phẩm
 router.use("/product", require('./routes/products/product.route.js'))
@@ -44,7 +44,7 @@ router.use("/product", require('./routes/products/product.route.js'))
 router.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerJsonData));
 
 // Trỏ tới file dashboard
-router.use("/", require('./controller/Login/login.route.js'));
+router.use("/", require('./controller/Login/login.route.js'));   
 
 router.use("/", require('./controller/Dashboard/dashboard.route.js'));
 
@@ -54,15 +54,8 @@ router.use("/", require('./controller/HomePage/homepage.route.js'));
 
 router.use("/", require('./controller/SignUp/signup.route.js'));
 
-app.use(router);
-
-
-/** KẾT THÚC TEST */
-/******************************** 
-*                               *
-* Hàm nghe Users ấn vào trang   *
-*                               *
-*********************************/ 
+app.use(router);  
+   
 app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);
 });
